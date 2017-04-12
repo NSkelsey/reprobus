@@ -7,9 +7,9 @@ set -x
 fname=crit_files_"$(date +%Y%m%d)".tar.gz
 SDIR=/home/nskelsey/projects/reprobus
 
-#SIZE=`du -c --files0-from=<(tr '\n' '\0' < $SDIR/target_files.txt) | awk 'END{print $1}'`
+SIZE=`du -c --files0-from=<(tr '\n' '\0' < $SDIR/target_files.txt) | awk 'END{print $1}'`
 # pv -p -s ${SIZE} 
-SIZE=3619584
+#SIZE=3619584
 
 echo "About to create archive of $SIZE"
 
