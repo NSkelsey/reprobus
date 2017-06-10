@@ -19,6 +19,6 @@ tar -hac -T $SDIR/target_files.txt | pv -t -b -a -r | gzip -c > /backup/tars/$fn
 
 echo 'Created backup'
 ls -alh /backup/tars/$fname
-sha256sum /backup/tars/$fname
 
-# Observations. . . bzip is quiet slow. The last run on 2.9 GB took 20m. Gzip pushes at 4.41 MiB/s
+echo 'Writing checksum to disk'
+sha256sum /backup/tars/$fname | tee -a $SDIR/shas.txt
